@@ -1,40 +1,58 @@
-const financialAdvisor = (company, specialty, name, portfolio, officalWorth) => Object.create({}, {
+const philBookchef = Object.create({}, {
 	company: {
-		value: company,
+		value: 'Totally Legit Financial Services',
 		enumerable: true,
 		writeable: true
 	},
 	specialty: {
-		value: specialty,
+		value: 'Completely 100% on the up-and-up financial transactions that are legal',
 		enumerable: true,
 		writeable: true
 	},
 	name: {
-		value: name,
+		value: 'Phil Bookchef',
 		enumerable: true,
 		writeable: false
 	},
 	portfolio: {
-		value: portfolio,
-		enumerable: false,
+		value: {
+			stockSymbol: {
+				value: 'APPL',
+				enumerable: true,
+				writable: true
+			},
+			stockShares: {
+				value: 152,
+				enumerable: true,
+				writable: true
+			},
+			stockValuation: {
+				value: 30400,
+				enumerable: true,
+				writable: true
+			}
+		},
+		enumerable: true,
 		writeable: true
 	},
 	officialWorth: {
-		value: officalWorth,
+		value: 0.17,
 		enumerable: true,
 		writeable: false
 	},
 	actualWorth: {
-		value: function() {
+		value: function () {
 			const add = (total, num) => {
 				return total + num
 			}
-			return this.portfolio.reduce(add,0)
+			return this.portfolio.reduce(add, 0)
 		},
 		enumerable: false,
 	},
 	purchase: {
-		value: function (quantity, price) {
+		value: function (symbol, quantity, valuation) {
+            
+
 			const buyWorth = ((quantity * price) * -1)
 			this.portfolio.push(buyWorth)
 		},
@@ -50,5 +68,3 @@ const financialAdvisor = (company, specialty, name, portfolio, officalWorth) => 
 		enumerable: false
 	}
 })
-
-const philBookchef = financialAdvisor('Totally Legit Financial Services', 'Completely 100% on the up-and-up financial transactions that are legal', 'Phil Bookchef', [1000], 0.17)

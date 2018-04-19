@@ -1,0 +1,2 @@
+const philBookchef = financialAdvisor('Totally Legit Financial Services', 'Completely 100% on the up-and-up financial transactions that are legal', 'Phil Bookchef', 0.17)
+philBookchef.portfolio.push(['AZN', 200, 5000], ['APPL', 20, 474])
